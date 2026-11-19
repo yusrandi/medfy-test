@@ -31,3 +31,13 @@ Route::get('/master-items/delete/{id}', [App\Http\Controllers\MasterItemsControl
 
 
 Route::get('/master-items/update-random-data', [App\Http\Controllers\MasterItemsController::class, 'updateRandomData']);
+
+Route::get('/master-items/export-excel', [App\Http\Controllers\MasterItemsController::class, 'downloadExcel']);
+
+Route::get('/kategori-items', [App\Http\Controllers\KategoriItemController::class, 'index']);
+Route::get('/kategori-items/search', [App\Http\Controllers\KategoriItemController::class, 'search']);
+Route::get('/kategori-items/form/{method}/{id?}', [App\Http\Controllers\KategoriItemController::class, 'formView']);
+Route::post('/kategori-items/form/{method}/{id?}', [App\Http\Controllers\KategoriItemController::class, 'formSubmit']);
+Route::get('/kategori-items/view/{kode}', [App\Http\Controllers\KategoriItemController::class, 'singleView']);
+Route::get('/kategori-items/delete/{id}', [App\Http\Controllers\KategoriItemController::class, 'delete']);
+Route::get('/kategori-items/pdf/{kode}', [App\Http\Controllers\KategoriItemController::class, 'exportPdf']);
